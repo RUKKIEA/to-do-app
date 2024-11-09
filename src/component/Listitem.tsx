@@ -1,25 +1,11 @@
-import { FormEvent, useState } from "react";
+interface listItemProps{
+ storage:  { task: string }[];
+}
 
-function Listitem() {
-  const [task, setTask] = useState("");
-  const [storage, setStorage] = useState<{ task: string }[]>([]);
-
-  const handleClick = (e: FormEvent) => {
-    e.preventDefault();
-    setStorage([...storage, { task: task }]);
-  };
+function Listitem({storage} :listItemProps) {
 
   return (
     <>
-      <form action="">
-        <input
-          type="text"
-          id="item"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button onClick={handleClick}>Add item</button>
-      </form>
       <div>
         {storage.map((storage) => (
           <div className="container">
