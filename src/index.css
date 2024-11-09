@@ -1,0 +1,12 @@
+.container{
+ width: 1000px;
+ height: 70px;
+ border: 1px solid black;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+}
+ul li{
+ list-style-type: none;
+}
