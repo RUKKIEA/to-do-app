@@ -1,20 +1,21 @@
 interface listItemProps{
  storage:  { task: string }[];
+ deleteItem: (index: number) => void;
 }
 
-function Listitem({storage} :listItemProps) {
+function Listitem({storage, deleteItem} :listItemProps) {
 
   return (
     <>
       <div>
-        {storage.map((storage) => (
+        {storage.map((storage, index) => (
           <div className="container">
             <ul>
               <li key={storage.task}>{storage.task}</li>
             </ul>
             <div>
-              <button>edit</button>
-              <button>Delete</button>
+              <button>Edit</button>
+              <button onClick={() => deleteItem(index)}>Delete</button>
             </div>
           </div>
         ))}
