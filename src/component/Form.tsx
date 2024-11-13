@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 
 interface formProps {
-  setStorage: Function;
+  setStorage: (task: string) => void;
 }
 
 const Form = ({ setStorage }: formProps) => {
